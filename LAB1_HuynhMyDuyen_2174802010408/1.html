@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chạy Mã và Hiển Thị Kết Quả</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        #result {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Chạy Mã và Hiển Thị Kết Quả</h1>
+    <textarea id="codeInput" rows="5" cols="40" placeholder="Nhập mã JavaScript ở đây"></textarea>
+    <br>
+    <button onclick="runCode()">Chạy Mã</button>
+    <div id="result"></div>
+
+    <script>
+        function runCode() {
+            const code = document.getElementById('codeInput').value;
+            let result;
+
+            try {
+                result = eval(code);
+            } catch (error) {
+                result = "Lỗi: " + error.message;
+            }
+
+            document.getElementById('result').innerText = "Kết quả: " + result;
+        }
+    </script>
+</body>
+</html>
